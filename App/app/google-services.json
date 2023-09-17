@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "927366355899",
+    "project_id": "filmquiz-76cde",
+    "storage_bucket": "filmquiz-76cde.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927366355899:android:bfc09c4845bc1602abc29e",
+        "android_client_info": {
+          "package_name": "com.example.filmquiz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAT8Wg1LXn7v6k1Z1ShTf_D9tkrMPL7Z6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
