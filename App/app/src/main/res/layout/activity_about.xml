@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".About"
-    android:background="@color/base">
+    android:background="@color/lavender">
 
     <LinearLayout
         android:id="@+id/logout"

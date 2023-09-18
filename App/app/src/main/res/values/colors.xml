@@ -2,8 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="base">#e3451e</color>
+    <color name="lavender">#e3451e</color>
     <color name="grisoscuro">#282c33</color>
     <color name="green">#54c45e</color>
-
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FCD110</color>
+    <color name="teal_700">#FFE986</color>
+    <color name="red">#c70000</color>
+    <color name="greenlight">#00ff00</color>
 </resources>

@@ -7,7 +7,7 @@
     tools:context=".SignUpActivity"
     android:orientation="vertical"
     android:padding="25dp"
-    android:background="@color/base">
+    android:background="@color/lavender">
 
     <ImageView
         android:id="@+id/signUpImageView"

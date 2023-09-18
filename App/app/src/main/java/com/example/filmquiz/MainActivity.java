@@ -42,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
         creaCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Crea Adivinanzas", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, MakeQuiz.class);
+
+                startActivity(intent);
 
             }
         });
