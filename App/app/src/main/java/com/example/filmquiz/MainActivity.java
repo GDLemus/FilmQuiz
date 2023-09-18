@@ -13,20 +13,21 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     CardView adivinaCardView, creaCardView, onlineCardView;
-    ImageView logologin;
-
+    private ImageView logom;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        logologin = findViewById(R.id.logologin);
-        logologin.setOnClickListener(new View.OnClickListener() {
+        logom = findViewById(R.id.logologin);
+        logom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, About.class);
-                startActivity(intent);
-                finish();
+                try {
+                    redirectActivity(MainActivity.this, About.class);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
