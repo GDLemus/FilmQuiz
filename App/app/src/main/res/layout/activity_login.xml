@@ -101,6 +101,15 @@
             android:layout_marginBottom="70dp"
             android:transitionName="buttonSignInTrans"/>
 
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/loginGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_gravity="end"
+            android:layout_marginBottom="50dp"
+            />
+
         <TextView
             android:id="@+id/nuevoUsuario"
             android:layout_width="250dp"

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "927366355899",
+    "firebase_url": "https://filmquiz-76cde-default-rtdb.firebaseio.com",
     "project_id": "filmquiz-76cde",
     "storage_bucket": "filmquiz-76cde.appspot.com"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.example.filmquiz"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "927366355899-74hash7sd9hu808se9372gpetcb2iqqh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.filmquiz",
+            "certificate_hash": "68fa940f47866c1e117b01e3782f22053e92d46d"
+          }
+        },
+        {
+          "client_id": "927366355899-2e4qmeg2ulfqp5858dubfj2rp90nbidt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAT8Wg1LXn7v6k1Z1ShTf_D9tkrMPL7Z6w"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927366355899-2e4qmeg2ulfqp5858dubfj2rp90nbidt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

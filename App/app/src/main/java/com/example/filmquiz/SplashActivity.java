@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -44,7 +46,8 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
 
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if (user != null){
+                GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(SplashActivity.this);
+                if (user != null && account!= null){
                     Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();

@@ -4,6 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="lavender">#e3451e</color>
     <color name="grisoscuro">#282c33</color>
+
+    <color name="boton">#e81313</color>
     <color name="green">#54c45e</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

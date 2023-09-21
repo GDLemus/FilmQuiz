@@ -2,6 +2,12 @@
     <string name="app_name">FilmQuiz</string>
     <string name="title_activity_adivina_pelicula">AdivinaPelicula</string>
     <!-- Strings used for fragments for navigation -->
+
+
+    <string name="web_client_id">927366355899-2e4qmeg2ulfqp5858dubfj2rp90nbidt.apps.googleusercontent.com</string>
+
+
+
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
