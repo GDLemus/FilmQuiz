@@ -37,7 +37,7 @@ import javax.xml.validation.Validator;
 
 public class LoginActivity extends AppCompatActivity {
 
-    TextView bienvenidoLabel, continuarLabel, nuevoUsuario;
+    TextView bienvenidoLabel, continuarLabel, nuevoUsuario, olvidasteContrasenia;
     ImageView loginImageView;
     TextInputLayout usuarioTextField, contrasenaTextField ;
     MaterialButton inicioSesion;
@@ -70,7 +70,12 @@ public class LoginActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
 
+        olvidasteContrasenia = findViewById(R.id.olvidasContra);
+
+
         mAuth = FirebaseAuth.getInstance();
+
+
 
 
         nuevoUsuario.setOnClickListener(new View.OnClickListener() {
@@ -96,6 +101,17 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+        olvidasteContrasenia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, ForgotPassword.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
 
 
 
