@@ -40,7 +40,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/recPriority"
+            android:id="@+id/recLang"
             android:layout_width="80dp"
             android:layout_height="30dp"
             android:layout_marginStart="90dp"

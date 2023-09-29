@@ -27,6 +27,10 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.UUID; // Importa la clase UUID para generar un ID único
+
 public class UploadActivity extends AppCompatActivity {
 
     ImageView uploadImage;
@@ -81,7 +85,7 @@ public class UploadActivity extends AppCompatActivity {
 
     public void saveData(){
         StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Android Images")
-                .child(uri.getLastPathSegment());
+                .child(UUID.randomUUID().toString()); // Utiliza UUID para generar un ID único
         AlertDialog.Builder builder = new AlertDialog.Builder(UploadActivity.this);
         builder.setCancelable(false);
         builder.setView(R.layout.progress_layout);
@@ -110,11 +114,8 @@ public class UploadActivity extends AppCompatActivity {
         String desc = uploadDesc.getText().toString();
         String lang = uploadLang.getText().toString();
         DataClass dataClass = new DataClass(title, desc, lang, imageURL);
-        //We are changing the child from title to currentDate,
-        // because we will be updating title as well and it may affect child value.
-        //String currentDate = DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
 
-        FirebaseDatabase.getInstance().getReference("FilmQuiz Data").child(title)
+        FirebaseDatabase.getInstance().getReference("FilmQuiz Data").push() // Utiliza push() para generar un ID único
                 .setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

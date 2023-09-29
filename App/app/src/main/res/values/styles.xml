@@ -1,0 +1,12 @@
+<resources>
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <!-- Puedes personalizar el tema aquí -->
+    </style>
+
+    <!-- Agrega un tema para SplashActivity que herede de AppTheme -->
+    <style name="SplashTheme" parent="AppTheme">
+        <!-- Personaliza el tema de SplashActivity aquí si es necesario -->
+    </style>
+</resources>

@@ -71,6 +71,7 @@ public class AdivinaPelicula extends AppCompatActivity {
 
     private  Button mButtonRespuesta;
 
+    TextView ResultadotextView;
     private ImageView mPeliView;
     private TextInputEditText mPeliEditText;
     private CountDownTimer mCountDownTimer;
@@ -103,8 +104,7 @@ public class AdivinaPelicula extends AppCompatActivity {
             }
         });
 
-
-
+        ResultadotextView = findViewById(R.id.ResultadotextView);
 
 
         mTextViewCountDown = findViewById(R.id.text_view_countdown);
@@ -223,10 +223,10 @@ public class AdivinaPelicula extends AppCompatActivity {
             // Verificar si el nombre ingresado coincide con el nombre de la película actual
             if (nombreIngresado.equalsIgnoreCase(currentMovie.getNombre())) {
                 // Coincide
-                Toast.makeText(AdivinaPelicula.this, "¡Correcto!", Toast.LENGTH_SHORT).show();
+                ResultadotextView.setText("Correcto");
             } else {
                 // No coincide
-                Toast.makeText(AdivinaPelicula.this, "Incorrecto. Inténtalo de nuevo.", Toast.LENGTH_SHORT).show();
+                ResultadotextView.setText("Incorrecto");
             }
 
             // Muestra una nueva película al azar después de verificar

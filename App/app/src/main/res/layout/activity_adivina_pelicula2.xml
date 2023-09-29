@@ -43,21 +43,29 @@
     <TextView
         android:id="@+id/text_view_countdown"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-       android:gravity="center"
+        android:layout_height="52dp"
         android:fontFamily="@font/abel"
+        android:gravity="center"
         android:text="00:00"
         android:textColor="@android:color/black"
-        android:textSize="50sp" />
+        android:textSize="40sp"
+        android:textStyle="bold"/>
 
-    <Space
+    <TextView
+        android:id="@+id/ResultadotextView"
         android:layout_width="match_parent"
-        android:layout_height="20dp" />
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="25sp"
+        android:textColor="@color/red"
+        android:fontFamily="@font/abel"
+        />
 
     <ImageView
         android:id="@+id/PeliView"
         android:layout_width="match_parent"
-        android:layout_height="191dp" />
+        android:layout_height="160dp" />
 
     <Space
         android:layout_width="match_parent"
@@ -100,7 +108,7 @@
         <ImageView
             android:id="@+id/button_start_pause"
             android:layout_width="match_parent"
-            android:layout_height="88dp"
+            android:layout_height="95dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/play" />
     </LinearLayout>
