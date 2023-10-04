@@ -21,7 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/abel"
-        android:text="Bienvenido,"
+        android:text="Bienvenido"
+        android:textColor="@color/black"
         android:layout_marginTop="28dp"
         android:textSize="40sp"
         android:textStyle="bold"
@@ -117,7 +118,9 @@
             android:text="REGISTRAR"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp"
-            android:transitionName="buttomSingTrans"/>
+            android:transitionName="buttomSingTrans"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/lavender"/>
         <TextView
             android:id="@+id/nuevoUsuario"
             android:layout_width="wrap_content"

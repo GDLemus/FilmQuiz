@@ -28,50 +28,20 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Locale;
-import java.util.Random;
-
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.bumptech.glide.Glide;
-import com.google.android.material.textfield.TextInputEditText;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 public class AdivinaPelicula extends AppCompatActivity {
 
-    private static String JSON_URL = "https://run.mocky.io/v3/a05f656d-8cb1-4287-b22d-69e39a4b1464";
+    private static String JSON_URL = "https://run.mocky.io/v3/f362022b-c71b-404d-be3f-31edee18093a";
 
     private static final long START_TIME_IN_MILLIS = 60000;
 
-
     List<MovieModelClass> movieList;
     private TextView mTextViewCountDown;
-    private ImageView mButtonStartPause;
-    private ImageView mButtonReset, mlogo;
-
-    private  Button mButtonRespuesta;
-
-    TextView ResultadotextView;
+    private ImageView mButtonStartPause, mlogo;
+    TextView ResultadotextView, mpuntosview;
     private ImageView mPeliView;
     private TextInputEditText mPeliEditText;
     private CountDownTimer mCountDownTimer;
@@ -88,6 +58,7 @@ public class AdivinaPelicula extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adivina_pelicula2);
 
+        mpuntosview = findViewById(R.id.puntosview);
         movieList = new ArrayList<>();
         random = new Random();
         mPeliView = findViewById(R.id.PeliView);
@@ -105,40 +76,23 @@ public class AdivinaPelicula extends AppCompatActivity {
         });
 
         ResultadotextView = findViewById(R.id.ResultadotextView);
-
-
         mTextViewCountDown = findViewById(R.id.text_view_countdown);
-
         mButtonStartPause = findViewById(R.id.button_start_pause);
-        mButtonReset = findViewById(R.id.button_reset);
 
         mButtonStartPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mTimerRunning) {
-                    // Muestra la primera película al azar al iniciar la actividad
-                    mostrarPeliculaAlAzar();
-
-                } else {
+                if (!mTimerRunning) {
                     startTimer();
-                    verificarCoincidencia();
-
-
                 }
+                verificarCoincidencia();
             }
         });
 
-        mButtonReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                resetTimer();
-            }
-        });
         updateCountDownText();
     }
 
-
-    //URL JSON
+    // URL JSON
     public class GetData extends AsyncTask<String, String, String> {
 
         @Override
@@ -224,9 +178,15 @@ public class AdivinaPelicula extends AppCompatActivity {
             if (nombreIngresado.equalsIgnoreCase(currentMovie.getNombre())) {
                 // Coincide
                 ResultadotextView.setText("Correcto");
+                ResultadotextView.setTextColor(getResources().getColor(android.R.color.holo_green_light));
+                mpuntosview.setText("+10pts");
+                mpuntosview.setTextColor(getResources().getColor(android.R.color.holo_green_light));
+
             } else {
                 // No coincide
                 ResultadotextView.setText("Incorrecto");
+                ResultadotextView.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                mpuntosview.setText("");
             }
 
             // Muestra una nueva película al azar después de verificar
@@ -238,16 +198,6 @@ public class AdivinaPelicula extends AppCompatActivity {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
     private void startTimer() {
         mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
             @Override
@@ -258,34 +208,13 @@ public class AdivinaPelicula extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                mTimerRunning = false;
-//                mButtonStartPause.setText("Start");
-//                mButtonStartPause.setVisibility(View.INVISIBLE);
-                mButtonReset.setVisibility(View.VISIBLE);
-
-                Intent intent = new Intent(AdivinaPelicula.this, MainActivity.class);
+                Intent intent = new Intent(AdivinaPelicula.this, OnlineMode.class);
                 startActivity(intent);
                 finish();
             }
         }.start();
-
         mTimerRunning = true;
-//        mButtonStartPause.setText("pause");
-        mButtonReset.setVisibility(View.INVISIBLE);
-    }
-
-    private void pauseTimer() {
-        mCountDownTimer.cancel();
-        mTimerRunning = false;
-//        mButtonStartPause.setText("Start");
-        mButtonReset.setVisibility(View.VISIBLE);
-    }
-
-    private void resetTimer() {
-        mTimeLeftInMillis = START_TIME_IN_MILLIS;
-        updateCountDownText();
-        mButtonReset.setVisibility(View.INVISIBLE);
-        mButtonStartPause.setVisibility(View.VISIBLE);
+        mButtonStartPause.setImageResource(R.drawable.play);
     }
 
     private void updateCountDownText() {
@@ -296,7 +225,4 @@ public class AdivinaPelicula extends AppCompatActivity {
 
         mTextViewCountDown.setText(timeLeftFormatted);
     }
-
-
-
 }

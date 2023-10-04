@@ -90,7 +90,8 @@
             android:layout_gravity="end"
             android:clickable="true"
             android:focusable="true"
-            android:text="Olvidaste tu contraseña"/>
+            android:text="Olvidaste tu contraseña"
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/inicioSesion"
@@ -99,7 +100,10 @@
             android:text="INICIO"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="70dp"
-            android:transitionName="buttonSignInTrans"/>
+            android:transitionName="buttonSignInTrans"
+            android:backgroundTint="@color/teal_200"
+            android:textColor="@color/lavender"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"

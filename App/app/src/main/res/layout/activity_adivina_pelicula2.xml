@@ -30,13 +30,14 @@
             android:layout_gravity="start"
             android:src="@drawable/adivinaletter" />
 
-        <ImageView
-            android:id="@+id/button_reset"
+        <TextView
+            android:id="@+id/puntosview"
             android:layout_width="62dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/reset" />
+            android:textColor="@color/green"
+            android:textStyle="italic"
+            android:foregroundGravity="center"/>
 
     </LinearLayout>
 
@@ -58,18 +59,20 @@
         android:gravity="center"
         android:text=""
         android:textSize="25sp"
-        android:textColor="@color/red"
+
         android:fontFamily="@font/abel"
+        android:textStyle="bold"
         />
 
     <ImageView
         android:id="@+id/PeliView"
         android:layout_width="match_parent"
-        android:layout_height="160dp" />
+        android:layout_height="160dp"
+        />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="17dp" />
+        android:layout_height="43dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/usuarioTextField"
@@ -79,7 +82,9 @@
         android:layout_marginBottom="12dp"
         android:foregroundGravity="center"
         android:hint="¿Que pelicula es?"
-        android:transitionName="emailInputTextTrans">
+        app:hintTextColor="@color/black"
+        android:transitionName="emailInputTextTrans"
+        app:boxStrokeColor="@color/black">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/peliEditText"
@@ -107,8 +112,8 @@
 
         <ImageView
             android:id="@+id/button_start_pause"
-            android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_width="291dp"
+            android:layout_height="82dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/play" />
     </LinearLayout>
